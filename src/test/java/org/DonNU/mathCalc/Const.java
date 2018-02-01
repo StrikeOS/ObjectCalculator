@@ -14,4 +14,14 @@ public class Const extends Function {
     public Const(double value) {
         this.value = value;
     }
+
+    @Override
+    public Function getDerivative(){
+        return new Const(0);
+    }
+
+    @Override
+    public String toString() {
+        return "Const = " + this.value;
+    }
 }

@@ -3,6 +3,10 @@ package org.DonNU.mathCalc.unarOperations;
  *           email: oscomtom@gmail.com
  *           skype: alexander.ostapchuk
  */
+import org.DonNU.mathCalc.Const;
+import org.DonNU.mathCalc.Function;
+import org.DonNU.mathCalc.binarOperations.Multi;
+
 import java.text.DecimalFormat;
 
 public class Cos extends UnarOperation {
@@ -18,14 +22,28 @@ public class Cos extends UnarOperation {
     }
 
     @Override
+    public Function getDerivative() {
+        //(cos(x))' = -sin(x)
+        Multi multiplication = new Multi();
+        multiplication.setlNode(new Const(-1));
+        Sin sin = new Sin();
+        sin.setArg(this.getArg());
+        sin.execute();
+        multiplication.setrNode(sin);
+        multiplication.execute();
+        return multiplication;
+    }
+
+    @Override
     public void execute() {
+        DecimalFormat df = new DecimalFormat("#.##");
         double radians = Math.toRadians(this.getArg().getValue());
-        this.value = Math.cos(radians);
+        this.value = Double.valueOf(df.format(Math.cos(radians)));
     }
 
     @Override
     public String toString() {
         DecimalFormat df = new DecimalFormat("#.##");
-        return "Cos(" + this.getArg().getValue() + ") = " + Double.valueOf(df.format(this.value));
+        return "Cos(" + this.getArg().getValue() + ") = " + this.value;
     }
 }

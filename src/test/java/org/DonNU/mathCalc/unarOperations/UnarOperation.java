@@ -16,4 +16,8 @@ public class UnarOperation extends Function {
         this.arg = arg;
     }
 
+    @Override
+    public Function getDerivative() {
+        return null;
+    }
 }

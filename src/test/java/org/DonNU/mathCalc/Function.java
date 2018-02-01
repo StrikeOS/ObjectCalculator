@@ -14,4 +14,8 @@ public abstract class Function implements FunctionInterface {
         return 0;
     }
 
+    @Override
+    public Function getDerivative(){
+        return null;
+    }
 }

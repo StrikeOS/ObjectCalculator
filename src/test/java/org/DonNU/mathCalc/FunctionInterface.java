@@ -6,6 +6,6 @@ package org.DonNU.mathCalc;
 public interface FunctionInterface {
 
     void execute();
-
     double getValue();
+    Function getDerivative();
 }
