@@ -8,6 +8,7 @@ import org.DonNU.mathCalc.binarOperations.Diff;
 import org.DonNU.mathCalc.binarOperations.Sum;
 import org.DonNU.mathCalc.unarOperations.Cos;
 import org.DonNU.mathCalc.Log;
+import org.DonNU.mathCalc.unarOperations.Sin;
 
 public class TestSet {
 
@@ -60,7 +61,13 @@ public class TestSet {
 //      (cos(x))' = -sin(x)
         Cos cos4 = new Cos();
         cos4.setArg(new Const(90)); //cos(90)=0;sin(90)=1;(cos(90))' = -sin(90) = -1
-        Log.info("Derivative of " + cos4.getDerivative().toString());
+        Log.info(cos4.getDerivativeToString());
+
+//      (sin(x))' = cos(x)
+        Sin sin1 = new Sin();
+        sin1.setArg(new Const(180));//sin(180) = 0 => cos(180) = -1
+        Log.info(sin1.getDerivativeToString());
+
 
     }
 }

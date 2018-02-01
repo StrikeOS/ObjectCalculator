@@ -1,4 +1,5 @@
 package org.DonNU.mathCalc.binarOperations;
+
 /* @author - Oleksandr Ostapchuk
  *           email: oscomtom@gmail.com
  *           skype: alexander.ostapchuk

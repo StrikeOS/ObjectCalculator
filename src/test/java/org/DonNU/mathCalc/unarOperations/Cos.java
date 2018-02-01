@@ -3,6 +3,7 @@ package org.DonNU.mathCalc.unarOperations;
  *           email: oscomtom@gmail.com
  *           skype: alexander.ostapchuk
  */
+
 import org.DonNU.mathCalc.Const;
 import org.DonNU.mathCalc.Function;
 import org.DonNU.mathCalc.binarOperations.Multi;
@@ -45,5 +46,9 @@ public class Cos extends UnarOperation {
     public String toString() {
         DecimalFormat df = new DecimalFormat("#.##");
         return "Cos(" + this.getArg().getValue() + ") = " + this.value;
+    }
+
+    public String getDerivativeToString() {
+        return "Derivative of Cos(" + this.getArg().getValue() + ") = " + this.getDerivative().toString();
     }
 }

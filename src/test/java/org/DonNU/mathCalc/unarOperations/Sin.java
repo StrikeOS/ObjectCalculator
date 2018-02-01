@@ -3,6 +3,7 @@ package org.DonNU.mathCalc.unarOperations;
  *           email: oscomtom@gmail.com
  *           skype: alexander.ostapchuk
  */
+
 import org.DonNU.mathCalc.Function;
 
 import java.text.DecimalFormat;
@@ -10,7 +11,6 @@ import java.text.DecimalFormat;
 public class Sin extends UnarOperation {
 
     private double value;
-    private Function derivative = new Cos();//correct
 
     public Sin() {
     }
@@ -22,7 +22,11 @@ public class Sin extends UnarOperation {
 
     @Override
     public Function getDerivative() {
-        return this.derivative;
+        //(sin(x))' = cos(x)
+        Cos cos = new Cos();
+        cos.setArg(this.getArg());
+        cos.execute();
+        return cos;
     }
 
     @Override
@@ -35,5 +39,9 @@ public class Sin extends UnarOperation {
     @Override
     public String toString() {
         return "Sin(" + this.getArg().getValue() + ") = " + this.value;
+    }
+
+    public String getDerivativeToString() {
+        return "Derivative of Sin(" + this.getArg().getValue() + ") = " + this.getDerivative().toString();
     }
 }

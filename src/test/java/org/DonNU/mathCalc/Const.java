@@ -1,4 +1,5 @@
 package org.DonNU.mathCalc;
+
 /* @author - Oleksandr Ostapchuk
  *           email: oscomtom@gmail.com
  *           skype: alexander.ostapchuk
@@ -16,7 +17,7 @@ public class Const extends Function {
     }
 
     @Override
-    public Function getDerivative(){
+    public Function getDerivative() {
         return new Const(0);
     }
 
