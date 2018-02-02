@@ -23,7 +23,7 @@ public class TestSet {
         sum1.setlNode(new Const(2));
         sum1.setrNode(new Const(4));
         sum1.execute();
-        Log.info(sum1.toString());
+        Log.info(sum1.toString() + " = " + sum1.getValue());
         sum1.resultToXML();
 
 //      y = Cos(x) + 12; x = 180; => y = 11;
@@ -35,7 +35,7 @@ public class TestSet {
         sum2.setlNode(cos);//-1
         sum2.setrNode(new Const(12));
         sum2.execute();
-        Log.info(sum2.toString());
+        Log.info(sum2.toString() + " = " + sum2.getValue());
         sum2.resultToXML();
 
 //      y = Cos(Cos(x)) + 5; x = 90; => y = 6;
@@ -51,7 +51,7 @@ public class TestSet {
         sum3.setlNode(cos3);//1
         sum3.setrNode(new Const(5));
         sum3.execute();
-        Log.info(sum3.toString());
+        Log.info(sum3.toString() + " = " + sum3.getValue());
         sum3.resultToXML();
 
 //      y = 5 - 3; => y = 2;
@@ -59,7 +59,7 @@ public class TestSet {
         diff1.setlNode(new Const(5));
         diff1.setrNode(new Const(3));
         diff1.execute();
-        Log.info(diff1.toString());
+        Log.info(diff1.toString() + " = " + diff1.getValue());
         diff1.resultToXML();
 
 //      (c)' = 0

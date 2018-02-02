@@ -33,7 +33,7 @@ public class Cos extends UnarOperation {
         sin.setArg(this.getArg());
         sin.execute();
         multiplication.setrNode(sin);
-        multiplication.execute();
+//        multiplication.execute();
         return multiplication;
     }
 
@@ -46,7 +46,8 @@ public class Cos extends UnarOperation {
 
     @Override
     public String toString() {
-        return this.className + "(" + this.getArg().toString() + ") = " + this.value;
+        return this.className + "(" + this.getArg().toString() + ")";// = " + this.value;
+
     }
 
     public String getDerivativeToString() {

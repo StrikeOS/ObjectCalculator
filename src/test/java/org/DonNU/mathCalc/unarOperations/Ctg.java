@@ -31,13 +31,13 @@ public class Ctg extends UnarOperation {
         division.setlNode(new Const(-1));
         Sin sin = new Sin();
         sin.setArg(this.getArg());
-        sin.execute();
+//        sin.execute();
         Multi multiplication = new Multi();
         multiplication.setlNode(sin);
         multiplication.setrNode(sin);
-        multiplication.execute();
+//        multiplication.execute();
         division.setrNode(multiplication);
-        division.execute();
+//        division.execute();
         return division;
     }
 

@@ -27,7 +27,7 @@ public class Sin extends UnarOperation {
         //(sin(x))' = cos(x)
         Cos cos = new Cos();
         cos.setArg(this.getArg());
-        cos.execute();
+//        cos.execute();
         return cos;
     }
 

@@ -24,7 +24,7 @@ public class Multi extends BinarOperation {
 
     @Override
     public String toString() {
-        return this.className + "( " + this.getlNode().toString() + " * " + this.getrNode().toString() + " ) = " + String.valueOf(this.value);
+        return this.className + "( " + this.getlNode().toString() + " * " + this.getrNode().toString() + " )";// = " + String.valueOf(this.value);
     }
 
     public void resultToXML() {

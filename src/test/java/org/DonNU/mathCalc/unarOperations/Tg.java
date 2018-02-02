@@ -31,13 +31,13 @@ public class Tg extends UnarOperation {
         division.setlNode(new Const(1));
         Cos cos = new Cos();
         cos.setArg(this.getArg());
-        cos.execute();
+//        cos.execute();
         Multi multiplication = new Multi();
         multiplication.setlNode(cos);
         multiplication.setrNode(cos);
-        multiplication.execute();
+//        multiplication.execute();
         division.setrNode(multiplication);
-        division.execute();
+//        division.execute();
         return division;
     }
 
