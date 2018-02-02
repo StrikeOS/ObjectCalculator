@@ -26,7 +26,8 @@ public class Const extends Function {
 
     @Override
     public String toString() {
-        return this.className + " = " + this.value;
+        return "" + this.value;
+        //return this.className + " = " + this.value;
     }
 
     public void resultToXML() {

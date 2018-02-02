@@ -3,17 +3,23 @@ package org.DonNU.mathCalc.unarOperations;
  *           email: oscomtom@gmail.com
  *           skype: alexander.ostapchuk
  */
+import org.DonNU.mathCalc.Arg;
 import org.DonNU.mathCalc.Function;
 
 public class UnarOperation extends Function {
-    private Function arg;
+    private Arg arg;
 
-    public Function getArg() {
+    public Arg getArg() {
         return this.arg;
     }
 
-    public void setArg(Function arg) {
+    public void setArg(Arg arg) {
         this.arg = arg;
+    }
+
+    @Override
+    public double getValue() {
+        return this.arg.getValue();
     }
 
     @Override

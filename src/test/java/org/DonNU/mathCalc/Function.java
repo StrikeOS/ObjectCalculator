@@ -10,11 +10,6 @@ public abstract class Function implements FunctionInterface {
     }
 
     @Override
-    public double getValue() {
-        return 0;
-    }
-
-    @Override
     public Function getDerivative(){
         return null;
     }

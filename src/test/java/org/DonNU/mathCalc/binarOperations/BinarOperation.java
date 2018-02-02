@@ -24,4 +24,15 @@ public class BinarOperation extends Function {
     public void setrNode(Function rNode) {
         this.rNode = rNode;
     }
+
+    @Override
+    public double getValue() {
+        try {
+            throw new Exception("Not inited getValue()");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
 }

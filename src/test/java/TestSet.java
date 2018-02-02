@@ -3,6 +3,7 @@
  *           skype: alexander.ostapchuk
  */
 
+import org.DonNU.mathCalc.Arg;
 import org.DonNU.mathCalc.Const;
 import org.DonNU.mathCalc.binarOperations.Diff;
 import org.DonNU.mathCalc.Polynom;
@@ -28,7 +29,7 @@ public class TestSet {
 //      y = Cos(x) + 12; x = 180; => y = 11;
         Sum sum2 = new Sum();
         Cos cos = new Cos();
-        cos.setArg(new Const(180));//-1
+        cos.setArg(new Arg(new Const(180)));//-1
         cos.execute();
 
         sum2.setlNode(cos);//-1
@@ -39,11 +40,11 @@ public class TestSet {
 
 //      y = Cos(Cos(x)) + 5; x = 90; => y = 6;
         Cos cos2 = new Cos();
-        cos2.setArg(new Const(90));
+        cos2.setArg(new Arg(new Const(90)));//0
         cos2.execute();
 
         Cos cos3 = new Cos();
-        cos3.setArg(cos2);
+        cos3.setArg(new Arg(new Const(cos2.getValue())));//1
         cos3.execute();
 
         Sum sum3 = new Sum();
@@ -68,25 +69,25 @@ public class TestSet {
 
 //      (cos(x))' = -sin(x)
         Cos cos4 = new Cos();
-        cos4.setArg(new Const(90)); //cos(90)=0;sin(90)=1;(cos(90))' = -sin(90) = -1
+        cos4.setArg(new Arg(new Const(90))); //cos(90)=0;sin(90)=1;(cos(90))' = -sin(90) = -1
         Log.info(cos4.getDerivativeToString());
         cos4.resultToXML();
 
 //      (sin(x))' = cos(x)
         Sin sin1 = new Sin();
-        sin1.setArg(new Const(180));//sin(180) = 0 => cos(180) = -1
+        sin1.setArg(new Arg(new Const(180)));//sin(180) = 0 => cos(180) = -1
         Log.info(sin1.getDerivativeToString());
         sin1.resultToXML();
 
 //      (tg(x))' = 1/cos^2(x)
         Tg tangens = new Tg();
-        tangens.setArg(new Const(180));//0
+        tangens.setArg(new Arg(new Const(180)));//0
         Log.info(tangens.getDerivativeToString());
         tangens.resultToXML();
 
 //      (ctg(x))' = - 1/sin^2(x)
         Ctg cotangens = new Ctg();
-        cotangens.setArg(new Const(90));//0
+        cotangens.setArg(new Arg(new Const(90)));//0
         Log.info(cotangens.getDerivativeToString());
         cotangens.resultToXML();
 

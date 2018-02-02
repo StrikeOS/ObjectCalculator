@@ -24,7 +24,7 @@ public class Diff extends BinarOperation {
 
     @Override
     public String toString() {
-        return this.className + "( " + this.getlNode().getValue() + " - " + this.getrNode().getValue() + " ) = " + String.valueOf(this.value);
+        return this.className + "( " + this.getlNode().toString() + " - " + this.getrNode().toString() + " ) = " + String.valueOf(this.value);
     }
 
     public void resultToXML() {

@@ -51,11 +51,11 @@ public class Ctg extends UnarOperation {
 
     @Override
     public String toString() {
-        return this.className + "(" + this.getArg().getValue() + ") = " + this.value;
+        return this.className + "(" + this.getArg().toString() + ")";
     }
 
     public String getDerivativeToString() {
-        return "Derivative of " + this.className + "(" + this.getArg().getValue() + ") = " + this.getDerivative().toString();
+        return "Derivative of " + this.className + "(" + this.getArg().toString() + ") = " + this.getDerivative().toString();
     }
 
     public void resultToXML() {

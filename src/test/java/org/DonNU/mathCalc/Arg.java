@@ -6,18 +6,19 @@ package org.DonNU.mathCalc;
  */
 public class Arg extends Function {
     private Function arg;
-    private double value;
 
-    public Arg(double value) {
-        this.value = value;
+    public Arg(Function value) {
+        this.arg = value;
     }
 
-    public void setArg(Function arg) {
-        this.arg = arg;
+    @Override
+    public String toString() {
+        return "x";
     }
 
-    public Function getArg() {
-        return this.arg;
+    @Override
+    public double getValue() {
+        return this.arg.getValue();
     }
 
 }
