@@ -4,18 +4,20 @@ package org.DonNU.mathCalc.unarOperations;
  *           skype: alexander.ostapchuk
  */
 
+import org.DonNU.mathCalc.Const;
 import org.DonNU.mathCalc.Function;
 import org.DonNU.mathCalc.XMLsaver;
+import org.DonNU.mathCalc.binarOperations.Div;
+import org.DonNU.mathCalc.binarOperations.Multi;
 
 import java.text.DecimalFormat;
 import java.util.UUID;
 
-public class Sin extends UnarOperation {
+public class Ctg extends UnarOperation {
     private String className = this.getClass().getSimpleName();
     private double value;
 
-    public Sin() {
-    }
+    public Ctg() {}
 
     @Override
     public double getValue() {
@@ -24,18 +26,27 @@ public class Sin extends UnarOperation {
 
     @Override
     public Function getDerivative() {
-        //(sin(x))' = cos(x)
-        Cos cos = new Cos();
-        cos.setArg(this.getArg());
-        cos.execute();
-        return cos;
+        // (ctg(x))' = - 1/sin^2(x)
+        Div division = new Div();
+        division.setlNode(new Const(-1));
+        Sin sin = new Sin();
+        sin.setArg(this.getArg());
+        sin.execute();
+        Multi multiplication = new Multi();
+        multiplication.setlNode(sin);
+        multiplication.setrNode(sin);
+        multiplication.execute();
+        division.setrNode(multiplication);
+        division.execute();
+        return division;
     }
 
     @Override
     public void execute() {
+        // ctg(x) = 1/tg(x)
         DecimalFormat df = new DecimalFormat("#.##");
         double radians = Math.toRadians(this.getArg().getValue());
-        this.value = Double.valueOf(df.format(Math.sin(radians)));
+        this.value = Double.valueOf(df.format((1 / Math.tan(radians))));
     }
 
     @Override

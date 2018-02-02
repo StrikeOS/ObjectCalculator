@@ -6,12 +6,14 @@ package org.DonNU.mathCalc.unarOperations;
 
 import org.DonNU.mathCalc.Const;
 import org.DonNU.mathCalc.Function;
+import org.DonNU.mathCalc.XMLsaver;
 import org.DonNU.mathCalc.binarOperations.Multi;
 
 import java.text.DecimalFormat;
+import java.util.UUID;
 
 public class Cos extends UnarOperation {
-
+    private String className = this.getClass().getSimpleName();
     private double value;
 
     public Cos() {
@@ -44,11 +46,15 @@ public class Cos extends UnarOperation {
 
     @Override
     public String toString() {
-        DecimalFormat df = new DecimalFormat("#.##");
-        return "Cos(" + this.getArg().getValue() + ") = " + this.value;
+        return this.className + "(" + this.getArg().getValue() + ") = " + this.value;
     }
 
     public String getDerivativeToString() {
-        return "Derivative of Cos(" + this.getArg().getValue() + ") = " + this.getDerivative().toString();
+        return "Derivative of " + this.className + "(" + this.getArg().getValue() + ") = " + this.getDerivative().toString();
+    }
+
+    public void resultToXML() {
+        String random = UUID.randomUUID().toString();
+        XMLsaver.resultToXML(className + "_" + random, this.toString());
     }
 }

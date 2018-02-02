@@ -1,10 +1,13 @@
 package org.DonNU.mathCalc;
 
+import java.util.UUID;
+
 /* @author - Oleksandr Ostapchuk
  *           email: oscomtom@gmail.com
  *           skype: alexander.ostapchuk
  */
 public class Const extends Function {
+    private String className = this.getClass().getSimpleName();
     private double value;
 
     @Override
@@ -23,6 +26,11 @@ public class Const extends Function {
 
     @Override
     public String toString() {
-        return "Const = " + this.value;
+        return this.className + " = " + this.value;
+    }
+
+    public void resultToXML() {
+        String random = UUID.randomUUID().toString();
+        XMLsaver.resultToXML(className + "_" + random, this.toString());
     }
 }
